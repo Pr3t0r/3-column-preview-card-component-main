@@ -47,8 +47,6 @@ Users should be able to:
 - media queries
 - eye sighting (no exact sizes were available except paragraphs)
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
 ### What I learned
 
 Getting use to the CSS custom properties, HSL/HSLA color codes.
