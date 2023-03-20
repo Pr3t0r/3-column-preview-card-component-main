@@ -1,0 +1,189 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+
+* {
+    margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+
+html,
+body {
+    height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+  [-----GLOBAL VARIABLES-----]
+*/
+
+:root {
+    --clr-primary-400: hsl(31, 77%, 52%);
+    --clr-secundary-400: hsl(184, 100%, 22%);
+    --clr-tertiary-400: hsl(179, 100%, 13%);
+
+    --clr-neutral--hsl-200: 0, 0%, 95%;
+    --crl-neutral-hsl-300: 0, 0%, 100%;
+
+    --clr-neutral-200: hsla(var(--clr-neutral--hsl-200), 1);
+    --clr-neutral-300: hsla(var(--crl-neutral-hsl-300), 0.75);
+    --clr-neutral-400: hsl(0, 0%, 100%);
+
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --accent: 'Big Shoulders Display', cursive;
+    --base: 'Lexend Deca', sans-serif;
+
+}
+
+/*
+  [-----General style-----]
+*/
+
+*:focus {
+    outline: transparent;
+}
+
+body {
+    font-family: var(--base);
+    font-weight: var(--fw-regular);
+    color: hsla(var(--crl-neutral-hsl-300), 0.6);
+    font-size: 0.9375rem;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1100px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.grid-flow {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.card {
+    max-width: 345px;
+    padding: 3.5rem;
+}
+
+.card:nth-child(1) {
+    background-color: var(--clr-primary-400);
+}
+
+.card:nth-child(2) {
+    background-color: var(--clr-secundary-400);
+}
+
+.card:nth-child(3) {
+    background-color: var(--clr-tertiary-400);
+}
+
+.title {
+    font-family: var(--accent);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: hsla(var(--clr-neutral--hsl-200), 0.9);
+}
+
+button {
+    padding: 1em 2em;
+    border-radius: 100vw;
+    border: none;
+    max-width: max-content;
+    cursor: pointer;
+    color: var(--clr-neutral--hsl-200);
+    border: 0.15em solid transparent;
+    transition: all 0.3s;
+}
+
+button:is(:hover, :focus) {
+    border: 0.15em solid var(--clr-neutral-400);
+    background-color: transparent;
+    color: var(--clr-neutral-400);
+}
+
+.card[data-car-type="sedan"] button:not(:hover, :focus) {
+    color: var(--clr-primary-400);
+}
+
+.card[data-car-type="suv"] button:not(:hover, :focus) {
+    color: var(--clr-secundary-400);
+}
+
+.card[data-car-type="luxury"] button:not(:hover, :focus) {
+    color: var(--clr-tertiary-400);
+}
+
